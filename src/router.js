@@ -1,40 +1,29 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
+import Router from "vue-router";
 import EventCreate from "./views/EventCreate.vue";
 import EventList from "./views/EventList.vue";
 import EventShow from "./views/EventShow.vue";
-import User from "./views/User.vue";
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
-const routes = [
-  {
-    path: "/",
-    name: "event-list",
-    component: EventList,
-  },
-  {
-    path: "/create",
-    name: "event-create",
-    component: EventCreate,
-  },
-  {
-    path: "/show/:id",
-    name: "event-show",
-    component: EventShow,
-    props: true,
-  },
-  {
-    path: "/user/:username",
-    name: "user",
-    component: User,
-    props: true,
-  },
-];
-
-const router = new VueRouter({
+export default new Router({
   mode: "history",
-  routes,
+  routes: [
+    {
+      path: "/",
+      name: "event-list",
+      component: EventList,
+    },
+    {
+      path: "/event/:id",
+      name: "event-show",
+      component: EventShow,
+      props: true,
+    },
+    {
+      path: "/event/create",
+      name: "event-create",
+      component: EventCreate,
+    },
+  ],
 });
-
-export default router;
