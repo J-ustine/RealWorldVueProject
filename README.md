@@ -11,6 +11,6 @@ Vue : develop the application in javascript using the Vue library.
 ## Project access
 You will be able to access this project by running the following command : 
 ```
-npm run build
+npm run serve
 ```
 Currently, the server is accessible from 'http://localhost:8080'.
